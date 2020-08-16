@@ -15,4 +15,5 @@ RUN     mkdir /toolchain && \
 
 RUN	wget -O /bin/repo 'https://storage.googleapis.com/git-repo-downloads/repo' && chmod a+x /bin/repo
 
-RUN	mkdir /WORKING_DIRECTORY && cd /WORKING_DIRECTORY && git config --global user.name "Your Name" && git config --global user.email "you@example.com" && repo init -u https://android.googlesource.com/platform/manifest -b android-7.1.0_r1 && repo sync
+RUN	mkdir /WORKING_DIRECTORY && cd /WORKING_DIRECTORY && git config --global user.name "Your Name" && git config --global user.email "you@example.com" && repo init -u https://android.googlesource.com/platform/manifest --depth=1 -b android-7.1.0_r1 && repo sync -c --no-tags --no-clone-bundle -j2
+
