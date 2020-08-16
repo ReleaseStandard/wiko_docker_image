@@ -1,8 +1,6 @@
-FROM ubuntu:12.04
+FROM ubuntu:18.04
 ENV TZ=Europe/Minsk
 
-RUN apt search openjdk-8-jdk
-RUN apt search openjdk-7-jdk
 RUN apt-get update && apt-get install wget tar nano make\
 	git gnupg flex bison gperf build-essential \
 	zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
